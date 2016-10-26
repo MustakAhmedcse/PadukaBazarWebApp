@@ -1,0 +1,103 @@
+﻿@using PadukaBazarWebApp.Models
+@model PadukaBazarWebApp.Models.Item
+
+@{
+    ViewBag.Title = "SaveItem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Catagory> catagories = ViewBag.ListOfCatagori;
+    List<SubCatagory> subCatagories = ViewBag.ListOfSubCatagori;
+}
+
+<h2>SaveItem</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Item</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatagoryId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CatagoryId,new SelectList (catagories,"Id","CatagoryName"));
+                @Html.ValidationMessageFor(model => model.CatagoryId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SubCatagoryId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.SubCatagoryId,new SelectList(subCatagories,"Id","SubCatagoryName"));
+                @Html.ValidationMessageFor(model => model.SubCatagoryId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ItemName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ItemName)
+                @Html.ValidationMessageFor(model => model.ItemName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ItemDiscrption, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ItemDiscrption)
+                @Html.ValidationMessageFor(model => model.ItemDiscrption)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ItemColour, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ItemColour)
+                @Html.ValidationMessageFor(model => model.ItemColour)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ItemBrand, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ItemBrand)
+                @Html.ValidationMessageFor(model => model.ItemBrand)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BuyPrice, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BuyPrice)
+                @Html.ValidationMessageFor(model => model.BuyPrice)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SellPrice, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SellPrice)
+                @Html.ValidationMessageFor(model => model.SellPrice)
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+        <h4>@ViewBag.Message</h4>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

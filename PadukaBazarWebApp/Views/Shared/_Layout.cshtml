@@ -24,6 +24,8 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Catagory", "Save", "Catagori")</li>
+                    <li>@Html.ActionLink("Sub Catagory", "Save", "SubCatagori")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -39,6 +41,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+   <script src="~/Scripts/jquery.validate.min.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
