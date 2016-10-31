@@ -165,9 +165,11 @@
     <Compile Include="Controllers\SubCatagoriController.cs" />
     <Compile Include="Core\Gateway\CatagoryGateway.cs" />
     <Compile Include="Core\Gateway\Gateway.cs" />
+    <Compile Include="Core\Gateway\ImageGateway.cs" />
     <Compile Include="Core\Gateway\ItemGateway.cs" />
     <Compile Include="Core\Gateway\SubCatagoryGateway.cs" />
     <Compile Include="Core\Manager\CatagoryManager.cs" />
+    <Compile Include="Core\Manager\ImageManager.cs" />
     <Compile Include="Core\Manager\ItemManager.cs" />
     <Compile Include="Core\Manager\SubCatagoryManager.cs" />
     <Compile Include="Global.asax.cs">
